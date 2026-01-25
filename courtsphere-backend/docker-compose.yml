@@ -1,0 +1,21 @@
+
+services:
+    postgres:
+        image: postgres:16
+        container_name: courtsphere-postgres
+
+
+        environment:
+          POSTGRES_DB: courtsphere_db
+          POSTGRES_USER: courtsphere_user
+          POSTGRES_PASSWORD: password
+
+        ports:
+          - "5880:5432"
+
+        volumes:
+          - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
