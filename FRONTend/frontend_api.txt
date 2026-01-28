@@ -1,0 +1,7 @@
+login(userId, password)
+getCasesByUser(id)
+assignLawyer(caseId, lawyerId)
+updateCaseStatus(caseId, status)
+uploadEvidence(caseId)
+makePayment(caseId, amount)
+approvePayment(paymentId)

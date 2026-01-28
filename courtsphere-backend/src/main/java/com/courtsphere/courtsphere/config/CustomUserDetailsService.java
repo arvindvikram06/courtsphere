@@ -13,6 +13,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     private UserRepository userRepository;
 
+
     public CustomUserDetailsService(UserRepository userRepository){
         System.out.println("CustomUserDetailService created");
         this.userRepository = userRepository;
@@ -35,8 +36,10 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 //        System.out.println("USERNAME RECEIVED BY UDS = [" + username + "]");
         System.out.println("load by user name called");
+        System.out.println(username);
         User user = userRepository.findByUserName(username)
                 .orElseThrow(() -> new UsernameNotFoundException("user not found"));
+        System.out.println("User found in DB" + user.getUserName());
 
 //        System.out.println("DB USERNAME = [" + user.getUserName() + "]");
 //        System.out.println("DB PASSWORD = [" + user.getPassword() + "]");

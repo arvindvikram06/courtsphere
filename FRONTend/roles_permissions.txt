@@ -1,0 +1,6 @@
+Citizen: View own cases, pay fees
+Police: Register & monitor cases
+Lawyer: Accept cases, view evidence
+Court: Full control of cases & evidence
+Finance: Approve payments
+Superadmin: Full system view

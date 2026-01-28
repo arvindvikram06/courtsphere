@@ -1,0 +1,10 @@
+App.jsx -> routing & layout
+Login.jsx -> authentication
+Sidebar.jsx -> role menu
+Home.jsx -> dashboard
+Case.jsx -> case management
+Payment.jsx -> payment handling
+Evidence.jsx -> evidence view/upload
+CaseSummary.jsx -> summary
+Profile.jsx -> user profile
+dataset.json -> mock database

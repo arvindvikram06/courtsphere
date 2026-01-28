@@ -2,17 +2,22 @@ package com.courtsphere.courtsphere.entity;
 
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.UUID;
 
 @Entity
 @Table(name = "users")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(updatable = false,nullable = false)
     private UUID userId;
-
+    @Column(nullable = false, unique = true)
     private String userName;
 
     private String password;
@@ -23,23 +28,5 @@ public class User {
 
     private boolean enabled = true;
 
-    public UUID getUserId() {
-        return userId;
-    }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
 }

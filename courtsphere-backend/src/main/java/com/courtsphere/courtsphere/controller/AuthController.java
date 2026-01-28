@@ -1,7 +1,9 @@
 package com.courtsphere.courtsphere.controller;
 
 
+import com.courtsphere.courtsphere.DTO.ApiResponse;
 import com.courtsphere.courtsphere.DTO.LoginRequest;
+import com.courtsphere.courtsphere.DTO.RegisterRequest;
 import com.courtsphere.courtsphere.config.UserPrincipal;
 import com.courtsphere.courtsphere.jwt.JwtUtils;
 import org.springframework.http.HttpStatus;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -22,10 +26,13 @@ public class AuthController {
 
         private final JwtUtils jwtUtils;
 
+        private final AuthService authService;
 
-        public AuthController(AuthenticationManager authManager,JwtUtils jwtUtils){
+
+        public AuthController(AuthenticationManager authManager,JwtUtils jwtUtils,AuthService authService){
               this.authManager = authManager;
               this.jwtUtils = jwtUtils;
+              this.authService = authService;
         }
 
     @PostMapping("/login")
@@ -36,25 +43,41 @@ public class AuthController {
 //        System.out.println("USERNAME FROM REQUEST = [" + req.getUsername() + "]");
 //        System.out.println("PASSWORD FROM REQUEST = [" + req.getPassword() + "]");
 
-        try {
+
             Authentication auth = authManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             req.getUsername(),
                             req.getPassword()
                     )
-            );
+                    );
             System.out.println("after authmanager call");
             UserPrincipal principal = (UserPrincipal) auth.getPrincipal();
             String token = jwtUtils.generateToken(principal);
 
-            return ResponseEntity.ok(token);
+        return ResponseEntity.ok(
+                ApiResponse.success(
+                        "Login successful",
+                        Map.of("token", token)
+                )
+        );
 
-        } catch (AuthenticationException ex) {
+    }
 
-            return ResponseEntity
-                    .status(HttpStatus.UNAUTHORIZED)
-                    .body("Invalid username or password");
-        }
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody RegisterRequest req){
+            System.out.println("username -> " + req.getUsername() + "|| password -> " + req.getPassword() +
+                    " || " + req.getRole());
+
+            authService.register(req);
+
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(
+                ApiResponse.success(
+                        "User registered successfully",
+                        null
+                )
+        );
+
     }
 
 }

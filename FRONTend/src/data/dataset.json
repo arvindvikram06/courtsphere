@@ -1,0 +1,49 @@
+{
+  "users": [
+    { "id": "1234-5678-9012", "password": "citizen123", "role": "citizen", "name": "Arun Kumar", "phone": "9876543210", "dob": "1995-02-10" },
+    { "id": "PS-001", "password": "police123", "role": "police", "name": "Inspector Ravi" },
+    { "id": "CRT-001", "password": "court123", "role": "court", "name": "Chennai District Court" },
+    { "id": "LAW-001", "password": "lawyer123", "role": "lawyer", "name": "Adv. Meena", "casesHandled": 20, "casesWon": 12, "available": true },
+    { "id": "FIN-001", "password": "finance123", "role": "finance", "name": "Finance Dept" },
+    { "id": "SUPER-001", "password": "admin123", "role": "superadmin", "name": "System Admin" }
+  ],
+
+  "cases": [
+    {
+      "caseId": "CASE-001",
+      "type": "Normal",
+      "status": "Ongoing",
+      "complainant": "1234-5678-9012",
+      "accused": "Unknown",
+      "lawyer": "LAW-001",
+      "hearings": ["2026-02-10"],
+      "fees": { "court": 1000, "lawyer": 2000, "fine": 0 },
+      "paymentStatus": "Pending"
+    }
+  ],
+
+  "payments": [
+    {
+      "paymentId": "PAY-001",
+      "caseId": "CASE-001",
+      "amount": 3000,
+      "paidBy": "1234-5678-9012",
+      "status": "Waiting Approval"
+    }
+  ],
+
+  "evidence": [
+    {
+      "caseId": "CASE-001",
+      "files": ["photo1.jpg", "report.pdf"],
+      "log": "Initial investigation report uploaded."
+    }
+  ],
+
+  "caseSummaries": [
+    {
+      "caseId": "CASE-001",
+      "summary": "Accident case pending judgement."
+    }
+  ]
+}

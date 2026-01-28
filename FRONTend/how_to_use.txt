@@ -1,0 +1,36 @@
+Access site: http://localhost:5173
+
+Sample logins:
+Citizen: 1234-5678-9012 / citizen123
+Police: PS-001 / police123
+Court: CRT-001 / court123
+Lawyer: LAW-001 / lawyer123
+Finance: FIN-001 / finance123
+SuperAdmin: SUPER-001 / admin123
+
+Citizen can:
+- Register case
+- Request lawyer
+- View payments
+- View evidence (only own cases)
+
+Police can:
+- Register cases
+- Request public prosecutor
+
+Lawyer can:
+- Accept/reject cases
+- View hearings
+- See payments
+
+Court can:
+- Upload evidence
+- Assign fees
+- Update case status
+- Upload case summary
+
+Finance can:
+- Approve payments
+
+Superadmin:
+- View all data

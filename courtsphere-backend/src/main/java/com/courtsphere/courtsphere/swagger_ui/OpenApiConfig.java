@@ -13,6 +13,7 @@ public class OpenApiConfig {
 
     @Bean
     public OpenAPI customOpenAPI() {
+        System.out.println("Creating OpenAPI bean");
         return new OpenAPI()
                 .info(new Info()
                         .title("Courtsphere API")
