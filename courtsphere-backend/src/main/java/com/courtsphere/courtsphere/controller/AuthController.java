@@ -46,13 +46,15 @@ public class AuthController {
 
             Authentication auth = authManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
-                            req.getUsername(),
+                            req.getAadharId(),
                             req.getPassword()
                     )
                     );
             System.out.println("after authmanager call");
             UserPrincipal principal = (UserPrincipal) auth.getPrincipal();
             String token = jwtUtils.generateToken(principal);
+
+            
 
         return ResponseEntity.ok(
                 ApiResponse.success(

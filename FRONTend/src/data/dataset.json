@@ -1,49 +1,556 @@
 {
   "users": [
-    { "id": "1234-5678-9012", "password": "citizen123", "role": "citizen", "name": "Arun Kumar", "phone": "9876543210", "dob": "1995-02-10" },
-    { "id": "PS-001", "password": "police123", "role": "police", "name": "Inspector Ravi" },
-    { "id": "CRT-001", "password": "court123", "role": "court", "name": "Chennai District Court" },
-    { "id": "LAW-001", "password": "lawyer123", "role": "lawyer", "name": "Adv. Meena", "casesHandled": 20, "casesWon": 12, "available": true },
-    { "id": "FIN-001", "password": "finance123", "role": "finance", "name": "Finance Dept" },
-    { "id": "SUPER-001", "password": "admin123", "role": "superadmin", "name": "System Admin" }
+    {
+      "id": "1234-5678-9012",
+      "password": "citizen123",
+      "role": "citizen",
+      "name": "Arun Kumar",
+      "phone": "9876543210",
+      "dob": "1990-05-15",
+      "address": "123 MG Road, Bangalore",
+      "email": "arun.kumar@example.com"
+    },
+    {
+      "id": "9876-5432-1098",
+      "password": "citizen456",
+      "role": "citizen",
+      "name": "Priya Singh",
+      "phone": "9123456789",
+      "dob": "1988-11-20",
+      "address": "45 Green Park, Delhi",
+      "email": "priya.singh@example.com"
+    },
+    {
+      "id": "4567-8901-2345",
+      "password": "citizen789",
+      "role": "citizen",
+      "name": "Deepak Verma",
+      "phone": "9988776655",
+      "dob": "1975-08-30",
+      "address": "78 Jubilee Hills, Hyderabad",
+      "email": "deepak.verma@example.com"
+    },
+    {
+      "id": "3344-5566-7788",
+      "password": "citizenabc",
+      "role": "citizen",
+      "name": "Sneha Reddy",
+      "phone": "9871122334",
+      "dob": "1992-03-12",
+      "address": "101 Anna Nagar, Chennai",
+      "email": "sneha.reddy@example.com"
+    },
+    {
+      "id": "CS-Citizen-005",
+      "password": "citizenxyz",
+      "role": "citizen",
+      "name": "Rajesh Koothrappali",
+      "phone": "9112233445",
+      "dob": "1985-06-06",
+      "address": "Flat 4A, Stars Apartments, Mumbai",
+      "email": "rajesh.k@example.com"
+    },
+    {
+      "id": "PS-001",
+      "password": "police123",
+      "role": "police",
+      "name": "Inspector Ravi Shankar",
+      "station": "Central Police Station",
+      "badgeNumber": "B-1234"
+    },
+    {
+      "id": "PS-002",
+      "password": "police456",
+      "role": "police",
+      "name": "Sub-Inspector Anjali Devi",
+      "station": "Cyber Crime Cell",
+      "badgeNumber": "B-5678"
+    },
+    {
+      "id": "PS-003",
+      "password": "police789",
+      "role": "police",
+      "name": "Constable Vikram Rathore",
+      "station": "Traffic Division",
+      "badgeNumber": "B-9101"
+    },
+    {
+      "id": "CRT-001",
+      "password": "court123",
+      "role": "court",
+      "name": "Bangalore District Court",
+      "type": "District"
+    },
+    {
+      "id": "CRT-002",
+      "password": "court456",
+      "role": "court",
+      "name": "Delhi High Court",
+      "type": "High"
+    },
+    {
+      "id": "LAW-001",
+      "password": "lawyer123",
+      "role": "lawyer",
+      "name": "Adv. Meena Iyer",
+      "casesHandled": 45,
+      "casesWon": 38,
+      "available": true,
+      "specialization": "Civil"
+    },
+    {
+      "id": "LAW-002",
+      "password": "lawyer456",
+      "role": "lawyer",
+      "name": "Adv. Suresh Menon",
+      "casesHandled": 60,
+      "casesWon": 50,
+      "available": false,
+      "specialization": "Criminal"
+    },
+    {
+      "id": "LAW-003",
+      "password": "lawyer789",
+      "role": "lawyer",
+      "name": "Adv. Kavita Das",
+      "casesHandled": 25,
+      "casesWon": 15,
+      "available": true,
+      "specialization": "Family"
+    },
+    {
+      "id": "LAW-004",
+      "password": "lawyerabc",
+      "role": "lawyer",
+      "name": "Adv. Rohan Malhotra",
+      "casesHandled": 10,
+      "casesWon": 5,
+      "available": true,
+      "specialization": "Corporate"
+    },
+    {
+      "id": "PP-001",
+      "password": "lawyerpp1",
+      "role": "lawyer",
+      "name": "PP. Vikram Singh",
+      "casesHandled": 100,
+      "casesWon": 80,
+      "available": true,
+      "specialization": "Public Prosecutor"
+    },
+    {
+      "id": "FIN-001",
+      "password": "finance123",
+      "role": "finance",
+      "name": "Finance Department"
+    },
+    {
+      "id": "SUPER-001",
+      "password": "admin123",
+      "role": "superadmin",
+      "name": "System Admin"
+    }
   ],
-
   "cases": [
     {
       "caseId": "CASE-001",
       "type": "Normal",
+      "nature": "Civil",
+      "subject": "Property Dispute at MG Road",
       "status": "Ongoing",
       "complainant": "1234-5678-9012",
+      "accused": "4567-8901-2345",
+      "defenseLawyer": "LAW-001",
+      "publicProsecutor": "N/A",
+      "court": "CRT-001",
+      "filingDate": "2025-01-10",
+      "hearings": [
+        "2026-02-10"
+      ],
+      "fees": {
+        "court": 1500,
+        "lawyer": 5000,
+        "fine": 0
+      },
+      "paymentStatus": "Pending",
+      "priority": "High"
+    },
+    {
+      "caseId": "CASE-002",
+      "type": "Normal",
+      "nature": "Criminal",
+      "subject": "Theft at Jewelry Store",
+      "status": "Investigation",
+      "complainant": "9876-5432-1098",
       "accused": "Unknown",
-      "lawyer": "LAW-001",
-      "hearings": ["2026-02-10"],
-      "fees": { "court": 1000, "lawyer": 2000, "fine": 0 },
-      "paymentStatus": "Pending"
+      "investigatingOfficer": "PS-001",
+      "defenseLawyer": "Pending",
+      "requestedDefenseLawyer": "LAW-002",
+      "publicProsecutor": "PP-001",
+      "court": "CRT-001",
+      "filingDate": "2025-11-20",
+      "hearings": [],
+      "fees": {
+        "court": 0,
+        "lawyer": 0,
+        "fine": 0
+      },
+      "paymentStatus": "N/A",
+      "priority": "Critical"
+    },
+    {
+      "caseId": "CASE-003",
+      "type": "Normal",
+      "nature": "Family",
+      "subject": "Custody Battle for Child",
+      "status": "Hearings",
+      "complainant": "3344-5566-7788",
+      "accused": "CS-Citizen-005",
+      "defenseLawyer": "LAW-003",
+      "publicProsecutor": "N/A",
+      "court": "CRT-002",
+      "filingDate": "2025-08-15",
+      "hearings": [
+        "2025-09-01",
+        "2025-10-15",
+        "2026-03-05"
+      ],
+      "fees": {
+        "court": 2000,
+        "lawyer": 15000,
+        "fine": 0
+      },
+      "paymentStatus": "Partial",
+      "priority": "Medium"
+    },
+    {
+      "caseId": "CASE-004",
+      "type": "Normal",
+      "nature": "Traffic",
+      "subject": "DUI Incident on Highway",
+      "status": "Closed",
+      "complainant": "PS-003",
+      "accused": "1234-5678-9012",
+      "defenseLawyer": "N/A",
+      "publicProsecutor": "PP-001",
+      "court": "CRT-001",
+      "filingDate": "2024-12-01",
+      "hearings": [
+        "2024-12-10"
+      ],
+      "fees": {
+        "court": 500,
+        "lawyer": 0,
+        "fine": 5000
+      },
+      "paymentStatus": "Paid",
+      "priority": "Low",
+      "verdict": "Guilty, Fine Paid"
+    },
+    {
+      "caseId": "CASE-005",
+      "type": "Normal",
+      "nature": "Cyber Crime",
+      "subject": "Online Phishing Scam",
+      "status": "New",
+      "complainant": "CS-Citizen-005",
+      "accused": "Unknown",
+      "investigatingOfficer": "PS-002",
+      "defenseLawyer": "LAW-004",
+      "publicProsecutor": "PP-001",
+      "court": "CRT-002",
+      "filingDate": "2026-01-20",
+      "hearings": [],
+      "fees": {
+        "court": 1000,
+        "lawyer": 2000,
+        "fine": 0
+      },
+      "paymentStatus": "Pending",
+      "priority": "High"
+    },
+    {
+      "caseId": "CASE-006",
+      "type": "Normal",
+      "nature": "Civil",
+      "subject": "Breach of Contract",
+      "status": "Verdict Reserved",
+      "complainant": "4567-8901-2345",
+      "accused": "9876-5432-1098",
+      "defenseLawyer": "LAW-001",
+      "publicProsecutor": "N/A",
+      "court": "CRT-001",
+      "filingDate": "2024-05-10",
+      "hearings": [
+        "2024-06-10",
+        "2024-08-10",
+        "2024-12-10"
+      ],
+      "fees": {
+        "court": 5000,
+        "lawyer": 25000,
+        "fine": 0
+      },
+      "paymentStatus": "Paid",
+      "priority": "Medium"
+    },
+    {
+      "caseId": "CASE-007",
+      "type": "Pro Bono",
+      "nature": "Civil Rights",
+      "subject": "Unlawful Eviction of Senior Citizen",
+      "status": "Open",
+      "complainant": "1234-5678-9012",
+      "accused": "Property Developer XYZ",
+      "defenseLawyer": "Pending",
+      "publicProsecutor": "N/A",
+      "court": "CRT-001",
+      "filingDate": "2026-01-25",
+      "hearings": [],
+      "fees": {
+        "court": 0,
+        "lawyer": 0,
+        "fine": 0
+      },
+      "paymentStatus": "N/A",
+      "priority": "High"
+    },
+    {
+      "caseId": "CASE-008",
+      "type": "Pro Bono",
+      "nature": "Family",
+      "subject": "Domestic Violence Aid",
+      "status": "Open",
+      "complainant": "9876-5432-1098",
+      "accused": "Spouse",
+      "defenseLawyer": "Pending",
+      "publicProsecutor": "PP-001",
+      "court": "CRT-002",
+      "filingDate": "2026-01-26",
+      "hearings": [],
+      "fees": {
+        "court": 0,
+        "lawyer": 0,
+        "fine": 0
+      },
+      "paymentStatus": "N/A",
+      "priority": "Critical"
+    },
+    {
+      "caseId": "CASE-009",
+      "type": "Pro Bono",
+      "nature": "Labor",
+      "subject": "Unpaid Wages for Factory Workers",
+      "status": "Open",
+      "complainant": "3344-5566-7788",
+      "accused": "Factory Owner",
+      "defenseLawyer": "Pending",
+      "publicProsecutor": "N/A",
+      "court": "CRT-001",
+      "filingDate": "2026-01-27",
+      "hearings": [],
+      "fees": {
+        "court": 0,
+        "lawyer": 0,
+        "fine": 0
+      },
+      "paymentStatus": "N/A",
+      "priority": "Medium"
+    },
+    {
+      "caseId": "CASE-010",
+      "type": "Normal",
+      "nature": "Criminal",
+      "subject": "Assault at Public Park",
+      "status": "Ongoing",
+      "complainant": "9876-5432-1098",
+      "accused": "1234-5678-9012",
+      "defenseLawyer": "LAW-002",
+      "publicProsecutor": "PP-001",
+      "investigatingOfficer": "PS-003",
+      "court": "CRT-001",
+      "filingDate": "2026-01-28",
+      "hearings": [
+        "2026-02-15"
+      ],
+      "fees": {
+        "court": 500,
+        "lawyer": 5000,
+        "fine": 0
+      },
+      "paymentStatus": "Pending",
+      "priority": "High"
+    },
+    {
+      "caseId": "CASE-011",
+      "type": "Normal",
+      "nature": "Civil",
+      "subject": "Neighbor Boundary Dispute",
+      "status": "New",
+      "complainant": "3344-5566-7788",
+      "accused": "CS-Citizen-005",
+      "defenseLawyer": "LAW-003",
+      "publicProsecutor": "N/A",
+      "court": "CRT-002",
+      "filingDate": "2026-01-20",
+      "hearings": [],
+      "fees": {
+        "court": 1000,
+        "lawyer": 3000,
+        "fine": 0
+      },
+      "paymentStatus": "Pending",
+      "priority": "Low"
+    },
+    {
+      "caseId": "CASE-012",
+      "type": "Pro Bono",
+      "nature": "Family",
+      "subject": "Adoption Legal Assistance",
+      "status": "Ongoing",
+      "complainant": "4567-8901-2345",
+      "accused": "N/A",
+      "defenseLawyer": "LAW-004",
+      "publicProsecutor": "N/A",
+      "investigatingOfficer": "PS-002",
+      "court": "CRT-002",
+      "filingDate": "2026-01-10",
+      "hearings": [
+        "2026-02-05"
+      ],
+      "fees": {
+        "court": 0,
+        "lawyer": 0,
+        "fine": 0
+      },
+      "paymentStatus": "N/A",
+      "priority": "Medium"
     }
   ],
-
   "payments": [
     {
       "paymentId": "PAY-001",
       "caseId": "CASE-001",
-      "amount": 3000,
+      "amount": 1500,
       "paidBy": "1234-5678-9012",
+      "date": "2026-01-15",
+      "description": "Court Filing Fees",
+      "status": "Approved"
+    },
+    {
+      "paymentId": "PAY-002",
+      "caseId": "CASE-001",
+      "amount": 5000,
+      "paidBy": "1234-5678-9012",
+      "date": "2026-01-20",
+      "description": "Lawyer Retainer",
       "status": "Waiting Approval"
+    },
+    {
+      "paymentId": "PAY-003",
+      "caseId": "CASE-004",
+      "amount": 5500,
+      "paidBy": "1234-5678-9012",
+      "date": "2024-12-12",
+      "description": "Traffic Fine + Court Fee",
+      "status": "Approved"
+    },
+    {
+      "paymentId": "PAY-004",
+      "caseId": "CASE-003",
+      "amount": 2000,
+      "paidBy": "3344-5566-7788",
+      "date": "2025-08-20",
+      "description": "Court Fees",
+      "status": "Approved"
+    },
+    {
+      "paymentId": "PAY-005",
+      "caseId": "CASE-003",
+      "amount": 5000,
+      "paidBy": "3344-5566-7788",
+      "date": "2025-09-01",
+      "description": "Lawyer Partial Fee",
+      "status": "Rejected",
+      "reason": "Incorrect Reference Number"
+    },
+    {
+      "paymentId": "PAY-006",
+      "caseId": "CASE-005",
+      "amount": 3000,
+      "paidBy": "CS-Citizen-005",
+      "date": "2026-01-22",
+      "description": "Initial Legal Consultation",
+      "status": "Pending"
     }
   ],
-
   "evidence": [
     {
+      "evidenceId": "EVI-001",
       "caseId": "CASE-001",
-      "files": ["photo1.jpg", "report.pdf"],
-      "log": "Initial investigation report uploaded."
+      "uploadedBy": "1234-5678-9012",
+      "files": [
+        "land_deed.pdf",
+        "survey_map.jpg"
+      ],
+      "log": "Original land deed document submitted.",
+      "date": "2026-01-12"
+    },
+    {
+      "evidenceId": "EVI-002",
+      "caseId": "CASE-002",
+      "uploadedBy": "PS-001",
+      "files": [
+        "cctv_footage_cam4.mp4",
+        "witness_statement_owner.pdf"
+      ],
+      "log": "CCTV footage identifying the suspect.",
+      "date": "2025-11-22"
+    },
+    {
+      "evidenceId": "EVI-003",
+      "caseId": "CASE-004",
+      "uploadedBy": "PS-003",
+      "files": [
+        "breathalyzer_report.pdf"
+      ],
+      "log": "Blood alcohol content report.",
+      "date": "2024-12-01"
+    },
+    {
+      "evidenceId": "EVI-004",
+      "caseId": "CASE-005",
+      "uploadedBy": "CS-Citizen-005",
+      "files": [
+        "email_screenshots.pdf",
+        "bank_statement.pdf"
+      ],
+      "log": "Screenshots of phishing emails and unauthorized transaction.",
+      "date": "2026-01-21"
     }
   ],
-
   "caseSummaries": [
     {
       "caseId": "CASE-001",
-      "summary": "Accident case pending judgement."
+      "summary": "This civil case involves a dispute over a 2400 sqft commercial property at MG Road. The plaintiff claims ownership based on a 1990 deed, while the defendant produced a 2010 sale deed. Court has ordered a forensic verification of documents.",
+      "lastUpdated": "2026-01-15"
+    },
+    {
+      "caseId": "CASE-002",
+      "summary": "Investigation into the robbery at Joyalukkas, Bandra Branch. Suspects identified via CCTV. One suspect detained for questioning. Stolen goods partially recovered."
+    },
+    {
+      "caseId": "CASE-003",
+      "summary": "Custody filed by mother (Plaintiff) against father (Defendant). Mediation failed. Court has ordered a child welfare committee report."
+    },
+    {
+      "caseId": "CASE-004",
+      "summary": "Defendant caught driving under influence. Pleaded guilty. Fine paid. License suspended for 3 months.",
+      "lastUpdated": "2024-12-10"
+    },
+    {
+      "caseId": "CASE-006",
+      "summary": "Breach of software development contract. Deliverables not met by the deadline. Arguments concluded. Verdict reserved for next session."
     }
   ]
 }

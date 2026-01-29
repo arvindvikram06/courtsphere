@@ -4,6 +4,6 @@ public enum Role {
     ADMIN,
     JUDGE,
     LAWYER,
-    CLERK,
+    FINANCE,
     USER
 }

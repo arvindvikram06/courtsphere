@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { getCases, getPayments } from '../utils/api';
 import { Briefcase, CreditCard, Gavel, Calendar, UserPlus, FileText } from 'lucide-react';
@@ -6,6 +7,7 @@ import clsx from 'clsx';
 
 const Home = () => {
     const { user } = useAuth();
+    const navigate = useNavigate();
     const [metrics, setMetrics] = useState({
         myCases: [],
         pendingPayments: [],
@@ -52,7 +54,10 @@ const Home = () => {
     }, [user]);
 
     const Widget = ({ title, value, icon: Icon, color, subtext, onClick }) => (
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow cursor-pointer">
+        <div
+            onClick={onClick}
+            className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow cursor-pointer"
+        >
             <div className="flex items-start justify-between">
                 <div>
                     <p className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-1">{title}</p>
@@ -82,6 +87,7 @@ const Home = () => {
                     icon={Briefcase}
                     color="bg-blue-500"
                     subtext="+2 new this month"
+                    onClick={() => navigate('/cases')}
                 />
                 <Widget
                     title="Pending Payments"
@@ -89,6 +95,7 @@ const Home = () => {
                     icon={CreditCard}
                     color="bg-orange-500"
                     subtext="Action required"
+                    onClick={() => navigate('/payments')}
                 />
                 <Widget
                     title="Hearings Today"
@@ -96,6 +103,7 @@ const Home = () => {
                     icon={Calendar}
                     color="bg-purple-500"
                     subtext="Next: 10:00 AM"
+                    onClick={() => navigate('/cases')}
                 />
                 <Widget
                     title="Favourite Cases"
@@ -103,6 +111,7 @@ const Home = () => {
                     icon={UserPlus}
                     color="bg-pink-500"
                     subtext="Pro Bono available"
+                    onClick={() => navigate('/cases')}
                 />
                 <Widget
                     title="Lawyer Requests"
@@ -110,6 +119,7 @@ const Home = () => {
                     icon={Gavel}
                     color="bg-indigo-500"
                     subtext="Pending acceptance"
+                    onClick={() => navigate('/cases')}
                 />
                 <Widget
                     title="Case Status"
@@ -117,6 +127,7 @@ const Home = () => {
                     icon={FileText}
                     color="bg-teal-500"
                     subtext="System operational"
+                    onClick={() => navigate('/summary')}
                 />
             </div>
 
@@ -139,7 +150,10 @@ const Home = () => {
                     <div className="relative z-10">
                         <h3 className="text-lg font-bold mb-2">Pro Bono Cases</h3>
                         <p className="text-indigo-100 mb-6 max-w-sm">Help those in need. Register for Pro Bono cases today and make a difference.</p>
-                        <button className="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-indigo-50 transition-colors">
+                        <button
+                            onClick={() => navigate('/cases')}
+                            className="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-indigo-50 transition-colors"
+                        >
                             View Available Cases
                         </button>
                     </div>

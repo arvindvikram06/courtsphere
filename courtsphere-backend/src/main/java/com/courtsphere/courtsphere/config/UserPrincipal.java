@@ -37,8 +37,8 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public String getUsername() {
-        System.out.println("get username called from userPrincipal");
-        return user.getUserName();
+        System.out.println("get aadharId called from userPrincipal");
+        return user.getAadharId();
     }
 
     @Override

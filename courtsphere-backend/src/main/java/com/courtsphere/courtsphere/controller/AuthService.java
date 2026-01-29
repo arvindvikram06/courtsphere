@@ -24,12 +24,13 @@ public class AuthService {
 
     public void register(RegisterRequest req) {
 
-            if(userRepository.existsByUserName(req.getUsername())){
+            if(userRepository.existsByAadharId(req.getAadharId())){
                 throw new UsernameAlreadyExistsException("Username already taken");
             }
 
             User user = new User();
             user.setUserName(req.getUsername());
+            user.setAadharId(req.getAadharId());
             user.setPassword(passwordEncoder.encode(req.getPassword()));
             user.setRole(req.getRole());
             user.setEnabled(true);

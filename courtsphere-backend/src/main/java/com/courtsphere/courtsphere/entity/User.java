@@ -17,8 +17,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(updatable = false,nullable = false)
     private UUID userId;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String userName;
+
+    @Column(nullable = false, unique = true)
+    private String aadharId;
 
     private String password;
 
