@@ -1,0 +1,18 @@
+# CourtSphere - Roles & Permissions
+
+| Feature | Citizen | Police | Court | Lawyer | Finance | Super Admin |
+|---------|---------|--------|-------|--------|---------|-------------|
+| Register Case | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ |
+| View Case (Own) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| View Case (All) | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ |
+| Upload Evidence | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ |
+| View Evidence | ✅* | ✅* | ✅ | ✅* | ❌ | ✅ |
+| Request Lawyer | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Handle Request| ❌ | ❌ | ❌ | ✅ | ❌ | ❌ |
+| Pay Fee | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Verify Payment| ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| Draft Verdict | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ |
+| Search Cases | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Lawyer Stats | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+* Only for cases they are involved in.

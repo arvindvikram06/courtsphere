@@ -1,0 +1,29 @@
+# CourtSphere - API Endpoints
+
+## Authentication
+- `POST /api/auth/login`: User login
+- `POST /api/auth/register`: User registration (Public for Citizen)
+
+## Cases
+- `GET /api/cases`: Get cases (Role-based filtering)
+- `POST /api/cases`: Register a new case
+- `PUT /api/cases/:id`: Update case status/hearings (Court only)
+- `PUT /api/cases/:id/lawyer`: Accept/Reject lawyer request (Lawyer only)
+
+## Payments
+- `GET /api/payments`: Get transaction history
+- `POST /api/payments`: Create payment request (Citizen only)
+- `PUT /api/payments/:id`: Approve/Reject payment (Finance only)
+
+## Evidence
+- `POST /api/evidence`: Upload evidence file (Court only)
+- `GET /api/evidence/:caseId`: Get evidence for a case (Involved parties)
+
+## Case Summary
+- `POST /api/summary`: Create/Update judicial summary (Court only)
+- `GET /api/summary/:caseId`: View case summary
+
+## Users
+- `GET /api/users/profile`: Get current user info
+- `PUT /api/users/profile`: Update contact info/password
+- `GET /api/users/lawyers`: List all registered lawyers

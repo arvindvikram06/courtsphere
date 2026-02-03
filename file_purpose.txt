@@ -1,0 +1,31 @@
+# CourtSphere - File Purpose
+
+## Root
+- `how_to_use.txt`: Main user guide and credentials.
+- `file_purpose.txt`: This file.
+- `roles_permissions.txt`: Matrix of access levels.
+- `api_list.txt`: List of backend endpoints.
+
+## Backend (Node.js/Express)
+- `server.js`: API entry point and middleware configuration.
+- `.env`: Secret keys and DB strings.
+- `seed.js`: Database initialization script.
+- `models/`: Mongoose schemas (User, Case, Payment, etc.).
+- `controllers/`: Business logic for each resource.
+- `routes/`: URL path definitions.
+- `middleware/`: JWT verification and Role authorization.
+- `config/`: Multer and database configurations.
+- `uploads/`: Physical storage for evidence files.
+
+## Frontend (React/Vite/Tailwind)
+- `src/App.jsx`: Global routing and protected routes.
+- `src/context/AuthContext.jsx`: Global user state and auth logic.
+- `src/components/Sidebar.jsx`: Dynamic navigation based on role.
+- `src/pages/`:
+    - `Login.jsx`: Multi-role entry point.
+    - `Dashboard.jsx`: 3x2 widget overview.
+    - `Cases.jsx`: Case registry and tracking table.
+    - `Payments.jsx`: Fee management and finance approvals.
+    - `Evidence.jsx`: Secure file repository.
+    - `CaseSummary.jsx`: Judicial drafting tool.
+    - `Profile.jsx`: User details and lawyer statistics.

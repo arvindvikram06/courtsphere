@@ -1,0 +1,59 @@
+# CourtSphere - How to Use
+
+CourtSphere is a professional judicial management system with role-based access.
+
+## Access URL
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:5000`
+
+## Sample Credentials (All Passwords: password123)
+
+| Role | User ID | Format |
+|------|---------|--------|
+| Citizen | 1234-1234-1234 | Aadhaar Format |
+| Police | PS-001 | Station ID |
+| Court | CRT-001 | Court ID |
+| Lawyer | LAW-001 | Lawyer ID |
+| Finance | FIN-001 | Finance ID |
+| Super Admin | SUP-001 | Superuser ID |
+
+## Core Operations
+
+1. **Registration (Citizen/Police)**:
+   - Login as Citizen/Police.
+   - Go to "Cases" tab.
+   - Click "Register Case".
+   - Fill in details (Title, Type, Accused).
+
+2. **Legal Aid (Citizen)**:
+   - Request a "Public Prosecutor" during registration.
+
+3. **Payment (Citizen)**:
+   - Go to "Payments".
+   - View outstanding fees.
+   - (Simulation) Click "Pay" to initiate approval.
+
+4. **Evidence (Court)**:
+   - Login as Court (CRT-001).
+   - Go to "Evidence".
+   - Select a case from the list.
+   - Upload PDF/Image/Video files.
+
+5. **Judgement (Court)**:
+   - Go to "Case Summary".
+   - Select the case.
+   - Write official summary and final verdict.
+   - Click "Finalize Record".
+
+6. **Approval (Finance)**:
+   - Login as Finance (FIN-001).
+   - Go to "Payments".
+   - Approve/Reject pending transaction requests.
+
+## Setup Instructions
+
+1. Install dependencies in both `backend/` and `frontend/` using `npm install`.
+2. Ensure MongoDB Atlas connection in `backend/.env` is active.
+3. Run `npm run seed` in `backend/` to initialize users.
+4. Start backend: `npm run dev`.
+5. Start frontend: `npm run dev`.
